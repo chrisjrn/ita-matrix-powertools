@@ -1450,7 +1450,7 @@ function retrieveMileages(){
     printMileages();
     return false;
   }
-  doHttpRequest("https://www.farefreaks.com/ajax/calcroutedist.php?"+params,{mode:"get"},function(xmlHttpObject) {
+  doHttpRequest("https://farefreaks.com/ajax/calcroutedist.php?"+params,{mode:"get"},function(xmlHttpObject) {
      var response=false;
      if (typeof(JSON) !== "undefined"){
        try {
@@ -3108,7 +3108,7 @@ function printFarefreaks (method){
     var carrieruarray = new Array();
     var mincabin=3;
     var segsize=0;
-    var farefreaksurl = "https://www.farefreaks.com/landing/landing.php?";
+    var farefreaksurl = "https://farefreaks.com/landing/landing.php?";
     if (mptSettings["itaLanguage"]=="de"||mptUsersettings["language"]=="de"){
     farefreaksurl +="lang=de";
     } else {
@@ -3394,7 +3394,7 @@ function getFareFreaksRoutingcodes(){
   options.mode="post";
   options.headers=[{name:'Accept', val:'application/json;charset=UTF-8'}, {name:'Content-Type', val:'application/x-www-form-urlencoded'}];
   options.data="data="+JSON.stringify({action:"creatematrix",plan:getFareFreaksPlan(),type:"matrix",mci_autofocus:1,mci_bcfromfare:1,mci_carriersleg:1,mci_carriersseg:1,mci_fnr:1,mci_inclbc:1,mci_inclcontime:1,mci_inclfare:1});
-  doHttpRequest("https://www.farefreaks.com/flightmanager/ajax/planhandler.php",options,function(xmlHttpObject) {
+  doHttpRequest("https://farefreaks.com/flightmanager/ajax/planhandler.php",options,function(xmlHttpObject) {
      var response=false;
      if (typeof(JSON) !== "undefined"){
        try {
@@ -3438,7 +3438,7 @@ function createFareFreaksPlanlink(){
   options.mode="post";
   options.headers=[{name:'Accept', val:'application/json;charset=UTF-8'}, {name:'Content-Type', val:'application/x-www-form-urlencoded'}];
   options.data="data="+JSON.stringify({action:"createplan",plan:getFareFreaksPlan(),type:"matrix"});
-  doHttpRequest("https://www.farefreaks.com/flightmanager/ajax/planhandler.php",options,function(xmlHttpObject) {
+  doHttpRequest("https://farefreaks.com/flightmanager/ajax/planhandler.php",options,function(xmlHttpObject) {
      var response=false;
      if (typeof(JSON) !== "undefined"){
        try {
@@ -3475,7 +3475,7 @@ function resolveTimezones(){
   options.mode="post";
   options.headers=[{name:'Accept', val:'application/json;charset=UTF-8'}, {name:'Content-Type', val:'application/x-www-form-urlencoded'}];
   options.data="data="+JSON.stringify({action:"resolvetimezones",plan:getTimezoneData("small"),type:"matrix"});
-  doHttpRequest("https://www.farefreaks.com/ajax/timezone.php",options,function(xmlHttpObject) {
+  doHttpRequest("https://farefreaks.com/ajax/timezone.php",options,function(xmlHttpObject) {
      var response=false;
      document.getElementById('timezone-container').style.display = 'none';
      if (typeof(JSON) !== "undefined"){
